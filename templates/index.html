@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Graph</title>
+</head>
+<body>
+    <!-- <h1>Stock Graph</h1> -->
+    <img id="dynamic-graph" src="" alt="Dynamic Graph">
+
+    <script>
+        function updateGraph(parameter) {
+            fetch('/graph_update/' + parameter)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dynamic-graph').src = 'data:image/png;base64,' + data.graph_base64;
+                });
+        }
+    
+        // Extract the parameter from the URL path
+        const pathSegments = window.location.pathname.split('/');
+        const parameter = pathSegments[pathSegments.length - 1]; // Get the last segment
+    
+        // Update the graph every 2 seconds with the extracted parameter
+        setInterval(function() {
+            updateGraph(parameter);
+        }, 10000);
+    
+        // Initial graph load
+        updateGraph(parameter);
+    </script>
+</body>
+</html>
