@@ -100,4 +100,4 @@ def graph_update(clan_name):
     return jsonify({'graph_base64': graph_base64})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080)  # Run on port 8080
