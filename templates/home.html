@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stonks!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Swapped to Inter for a slightly different modern feel */
+            background-color: #0f172a; /* Darker, more saturated background (slate-900) */
+            color: #f9fafb; /* Off-white, slightly warmer text (gray-50) */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #6ee7b7; /* A teal/cyan accent color (teal-300) */
+            text-shadow: 0 0 8px rgba(52, 211, 153, 0.8); /* Slightly different glow */
+        }
+        p {
+            font-size: 1.2em;
+            color: #d1d5db; /* Slightly warmer gray (gray-300) */
+            margin-bottom: 2em;
+            line-height: 1.7; /* Increased line height for better readability */
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #cbd5e0;
+            margin-bottom: 1em;
+        }
+        a {
+            color: #6ee7b7; /* Teal link color */
+            text-decoration: none;
+            font-weight: 600; /* Semi-bold font weight */
+            transition: color 0.3s ease; /* Smooth transition */
+        }
+        a:hover {
+            color: #14b8a6; /* Darker teal on hover (teal-500) */
+            text-decoration: underline;
+        }
+        .instruction {
+            background-color: #1e293b; /* Slightly lighter container (slate-800) */
+            padding: 2em; /* Slightly increased padding */
+            border-radius: 0.75rem;
+            margin-bottom: 2em;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7); /* Slightly stronger shadow */
+            border: 1px solid #4b5563; /* Darker border (gray-700) */
+        }
+        .instruction p {
+            font-size: 1.1em;
+            color: #f8fafc;
+        }
+    </style>
+</head>
 <body>
+    <h1>Stonks!</h1>
+    <p>TO THE MOON!</p>
 
-<h2>Stonks</h2>
-<p>The STONKS!!!</p>
+    <div class="instruction">
+        <h3>Welcome, Fellow Investors!</h3>
+        <p>
+            Thank you for visiting this elite gathering! To access the clan's trading den, simply append the clan's name to the URL.
+        </p>
+        <p>
+            For example, if your clan is "CORGI", enter: <a href="/CORGI">/CORGI</a>.
+        </p>
+    </div>
 
-<h3>Hello everyone thank you for visiting the website I want you to type the clan name in the url. Example - /CORGI</h3>
-
+    <p>
+        Disclaimer: This is not financial advice. You are responsible for your own trades.
+    </p>
 </body>
 </html>

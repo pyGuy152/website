@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Stock Graph</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stonks Graph</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0; /* Removed default margin for full control */
+            background-color: #0f172a; /* Dark background (slate-900) */
+            color: #f9fafb; /* Off-white text (gray-50) */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the start (top) */
+            min-height: 100vh; /* Ensure full viewport height */
+            padding-top: 20px; /* Add padding at the top */
+            text-align: center; /* Center text */
+        }
+
+        #graph-container {
+            background-color: #1e293b; /* Darker container (slate-800) */
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+            padding: 2em;
+            margin-bottom: 2em; /* Increased margin */
+            width: 90%; /* Make it responsive, taking up most of the width */
+            max-width: 800px; /* Limit maximum width */
+            border: 1px solid #4b5563;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', monospace;
+            color: #6ee7b7; /* Teal/cyan title (teal-300) */
+            font-size: 2em; /* Slightly smaller heading */
+            margin-bottom: 1em;
+        }
+
+        #dynamic-graph {
+            width: 100%; /* Make graph responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            border-radius: 0.5rem; /* Rounded corners for the graph */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add shadow to the graph */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            #graph-container {
+                padding: 1.5em;
+                width: 95%;
+            }
+            h1 {
+                font-size: 1.75em; /* Smaller heading on small screens */
+            }
+             body {
+                padding-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- <h1>Stock Graph</h1> -->
-    <img id="dynamic-graph" src="" alt="Dynamic Graph">
+    <div id="graph-container">
+        <h1>Stonks Graph</h1>
+        <img id="dynamic-graph" src="" alt="Dynamic Stock Graph">
+    </div>
 
     <script>
         function updateGraph(parameter) {
@@ -15,16 +75,16 @@
                     document.getElementById('dynamic-graph').src = 'data:image/png;base64,' + data.graph_base64;
                 });
         }
-    
+
         // Extract the parameter from the URL path
         const pathSegments = window.location.pathname.split('/');
         const parameter = pathSegments[pathSegments.length - 1]; // Get the last segment
-    
-        // Update the graph every 2 seconds with the extracted parameter
+
+        // Update the graph every 5 minutes (300000 milliseconds) with the extracted parameter
         setInterval(function() {
             updateGraph(parameter);
         }, 300000);
-    
+
         // Initial graph load
         updateGraph(parameter);
     </script>

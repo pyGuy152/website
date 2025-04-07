@@ -49,6 +49,8 @@ def save_data(y):
         check = json.load(f)
     for i in range(len(x)):
         if x[i]['name'] == y['name']:
+            if len(x[i]['price'] > 999):
+                x[i]['price'] = x[i]['price'].pop(0)
             x[i]['price'] += y['price']
     if check == x:
         x.append(y)
